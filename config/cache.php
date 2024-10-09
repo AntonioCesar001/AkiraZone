@@ -6,31 +6,30 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Default Cache Store
+    | Armazenamento de Cache Padrão
     |--------------------------------------------------------------------------
     |
-    | This option controls the default cache connection that gets used while
-    | using this caching library. This connection is used when another is
-    | not explicitly specified when executing a given caching function.
+    | Esta opção controla a conexão de cache padrão que é usada enquanto
+    | usa esta biblioteca de caching. Esta conexão é utilizada quando outra
+    | não é especificada explicitamente ao executar uma função de cache dada.
     |
     */
-
     'default' => env('CACHE_DRIVER', 'file'),
 
     /*
     |--------------------------------------------------------------------------
-    | Cache Stores
+    | Armazenamentos de Cache
     |--------------------------------------------------------------------------
     |
-    | Here you may define all of the cache "stores" for your application as
-    | well as their drivers. You may even define multiple stores for the
-    | same cache driver to group types of items stored in your caches.
+    | Aqui você pode definir todos os "armazenamentos" de cache para sua
+    | aplicação, assim como seus drivers. Você pode até definir múltiplos
+    | armazenamentos para o mesmo driver de cache para agrupar tipos de itens
+    | armazenados em seus caches.
     |
-    | Supported drivers: "apc", "array", "database", "file",
+    | Drivers suportados: "apc", "array", "database", "file",
     |         "memcached", "redis", "dynamodb", "octane", "null"
     |
     */
-
     'stores' => [
 
         'apc' => [
@@ -97,15 +96,15 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Cache Key Prefix
+    | Prefixo de Chave de Cache
     |--------------------------------------------------------------------------
     |
-    | When utilizing the APC, database, memcached, Redis, or DynamoDB cache
-    | stores there might be other applications using the same cache. For
-    | that reason, you may prefix every cache key to avoid collisions.
+    | Ao utilizar os armazenamentos de cache APC, banco de dados, memcached,
+    | Redis ou DynamoDB, pode haver outras aplicações usando o mesmo cache.
+    | Por esse motivo, você pode prefixar cada chave de cache para evitar
+    | colisões.
     |
     */
-
     'prefix' => env('CACHE_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_cache_'),
 
 ];

@@ -4,30 +4,29 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Default Broadcaster
+    | Difusor Padrão
     |--------------------------------------------------------------------------
     |
-    | This option controls the default broadcaster that will be used by the
-    | framework when an event needs to be broadcast. You may set this to
-    | any of the connections defined in the "connections" array below.
+    | Esta opção controla o difusor padrão que será utilizado pelo framework
+    | quando um evento precisa ser transmitido. Você pode definir isso para
+    | qualquer uma das conexões definidas no array "connections" abaixo.
     |
-    | Supported: "pusher", "ably", "redis", "log", "null"
+    | Suportado: "pusher", "ably", "redis", "log", "null"
     |
     */
-
     'default' => env('BROADCAST_DRIVER', 'null'),
 
     /*
     |--------------------------------------------------------------------------
-    | Broadcast Connections
+    | Conexões de Broadcast
     |--------------------------------------------------------------------------
     |
-    | Here you may define all of the broadcast connections that will be used
-    | to broadcast events to other systems or over websockets. Samples of
-    | each available type of connection are provided inside this array.
+    | Aqui você pode definir todas as conexões de broadcast que serão
+    | usadas para transmitir eventos para outros sistemas ou por meio de
+    | websockets. Exemplos de cada tipo de conexão disponível são fornecidos
+    | dentro deste array.
     |
     */
-
     'connections' => [
 
         'pusher' => [
@@ -44,7 +43,7 @@ return [
                 'useTLS' => env('PUSHER_SCHEME', 'https') === 'https',
             ],
             'client_options' => [
-                // Guzzle client options: https://docs.guzzlephp.org/en/stable/request-options.html
+                // Opções do cliente Guzzle: https://docs.guzzlephp.org/en/stable/request-options.html
             ],
         ],
 

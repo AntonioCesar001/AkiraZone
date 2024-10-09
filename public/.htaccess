@@ -1,21 +1,44 @@
 <IfModule mod_rewrite.c>
+    <!-- Verifica se o módulo mod_rewrite está ativo, pois todas as regras de reescrita dependem desse módulo. -->
+
     <IfModule mod_negotiation.c>
+        <!-- Verifica se o módulo mod_negotiation está ativo para configurar as opções de diretório. -->
+        
         Options -MultiViews -Indexes
+        <!-- 
+        - Desativa a funcionalidade "MultiViews", que tenta mapear URLs de forma automática com base em conteúdo similar.
+        - Desativa a listagem de diretórios ("Indexes"), impedindo que o servidor exiba o conteúdo de pastas caso um arquivo index não esteja presente.
+        -->
     </IfModule>
 
     RewriteEngine On
+    <!-- Habilita o mecanismo de reescrita de URLs, necessário para aplicar as regras de reescrita abaixo. -->
 
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+    <!--
+    - Essa regra é utilizada para garantir que o cabeçalho de autorização (Authorization) seja corretamente passado para o PHP. 
+    - Essencial em APIs RESTful que utilizam tokens JWT ou OAuth, permitindo que a autorização seja processada corretamente.
+    -->
 
     # Redirect Trailing Slashes If Not A Folder...
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_URI} (.+)/$
     RewriteRule ^ %1 [L,R=301]
+    <!--
+    - Redireciona URLs com barras no final, a menos que sejam pastas.
+    - Se a requisição não for para um diretório existente (!-d) e o URI terminar com uma barra '/', remove a barra final.
+    - Responde com um redirecionamento 301 (permanente) para garantir que URLs fiquem consistentes sem barras finais.
+    -->
 
     # Send Requests To Front Controller...
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
+    <!--
+    - Redireciona todas as requisições para o `index.php`, exceto aquelas que apontam para arquivos (!-f) ou diretórios (!-d) existentes.
+    - Isso é a base do padrão Front Controller, muito comum em frameworks como Laravel, onde todas as requisições passam por um único ponto de entrada (neste caso, o `index.php`).
+    - A flag [L] garante que, uma vez aplicada esta regra, não se processem mais reescritas.
+    -->
 </IfModule>

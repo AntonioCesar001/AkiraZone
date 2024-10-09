@@ -9,12 +9,12 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Default Log Channel
+    | Canal de Log Padrão
     |--------------------------------------------------------------------------
     |
-    | This option defines the default log channel that gets used when writing
-    | messages to the logs. The name specified in this option should match
-    | one of the channels defined in the "channels" configuration array.
+    | Esta opção define o canal de log padrão que é usado ao escrever
+    | mensagens nos logs. O nome especificado nesta opção deve corresponder
+    | a um dos canais definidos no array de configuração "channels".
     |
     */
 
@@ -22,12 +22,12 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Deprecations Log Channel
+    | Canal de Log de Depreciações
     |--------------------------------------------------------------------------
     |
-    | This option controls the log channel that should be used to log warnings
-    | regarding deprecated PHP and library features. This allows you to get
-    | your application ready for upcoming major versions of dependencies.
+    | Esta opção controla o canal de log que deve ser usado para registrar avisos
+    | sobre recursos PHP e bibliotecas depreciados. Isso permite que você prepare
+    | sua aplicação para versões principais futuras das dependências.
     |
     */
 
@@ -38,16 +38,17 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Log Channels
+    | Canais de Log
     |--------------------------------------------------------------------------
     |
-    | Here you may configure the log channels for your application. Out of
-    | the box, Laravel uses the Monolog PHP logging library. This gives
-    | you a variety of powerful log handlers / formatters to utilize.
+    | Aqui você pode configurar os canais de log para sua aplicação. De forma
+    | padrão, o Laravel usa a biblioteca de logging Monolog PHP. Isso dá
+    | a você uma variedade de manipuladores/formatadores de log poderosos para
+    | utilizar.
     |
-    | Available Drivers: "single", "daily", "slack", "syslog",
-    |                    "errorlog", "monolog",
-    |                    "custom", "stack"
+    | Drivers disponíveis: "single", "daily", "slack", "syslog",
+    |                     "errorlog", "monolog",
+    |                     "custom", "stack"
     |
     */
 

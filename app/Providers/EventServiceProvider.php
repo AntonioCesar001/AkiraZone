@@ -7,10 +7,16 @@ use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Event;
 
+/**
+ * Classe EventServiceProvider que registra eventos e ouvintes na aplicação.
+ *
+ * Este provedor é utilizado para mapear eventos a ouvintes específicos
+ * que serão executados quando os eventos forem disparados.
+ */
 class EventServiceProvider extends ServiceProvider
 {
     /**
-     * The event to listener mappings for the application.
+     * O mapeamento de eventos para ouvintes da aplicação.
      *
      * @var array<class-string, array<int, class-string>>
      */
@@ -21,7 +27,13 @@ class EventServiceProvider extends ServiceProvider
     ];
 
     /**
-     * Register any events for your application.
+     * Registra quaisquer eventos para sua aplicação.
+     *
+     * Este método é chamado durante a inicialização da aplicação. 
+     * Ele pode ser utilizado para adicionar lógica adicional de eventos,
+     * mas neste caso, não é necessário.
+     *
+     * @return void
      */
     public function boot(): void
     {
@@ -29,7 +41,9 @@ class EventServiceProvider extends ServiceProvider
     }
 
     /**
-     * Determine if events and listeners should be automatically discovered.
+     * Determina se os eventos e ouvintes devem ser descobertos automaticamente.
+     *
+     * @return bool
      */
     public function shouldDiscoverEvents(): bool
     {

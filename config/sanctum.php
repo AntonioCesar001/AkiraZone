@@ -6,12 +6,12 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Stateful Domains
+    | Domínios com Estado
     |--------------------------------------------------------------------------
     |
-    | Requests from the following domains / hosts will receive stateful API
-    | authentication cookies. Typically, these should include your local
-    | and production domains which access your API via a frontend SPA.
+    | Solicitações dos seguintes domínios / hosts receberão cookies de
+    | autenticação de API com estado. Normalmente, isso deve incluir seus domínios
+    | local e de produção que acessam sua API via um frontend SPA.
     |
     */
 
@@ -23,13 +23,13 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Sanctum Guards
+    | Guardas do Sanctum
     |--------------------------------------------------------------------------
     |
-    | This array contains the authentication guards that will be checked when
-    | Sanctum is trying to authenticate a request. If none of these guards
-    | are able to authenticate the request, Sanctum will use the bearer
-    | token that's present on an incoming request for authentication.
+    | Este array contém os guardas de autenticação que serão verificados
+    | quando o Sanctum tentar autenticar uma solicitação. Se nenhum desses
+    | guardas for capaz de autenticar a solicitação, o Sanctum usará o token
+    | bearer presente em uma solicitação de entrada para autenticação.
     |
     */
 
@@ -37,12 +37,13 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Expiration Minutes
+    | Minutos de Expiração
     |--------------------------------------------------------------------------
     |
-    | This value controls the number of minutes until an issued token will be
-    | considered expired. If this value is null, personal access tokens do
-    | not expire. This won't tweak the lifetime of first-party sessions.
+    | Este valor controla o número de minutos até que um token emitido
+    | seja considerado expirado. Se esse valor for nulo, tokens de acesso
+    | pessoais não expiram. Isso não altera a duração das sessões de
+    | primeira parte.
     |
     */
 
@@ -50,12 +51,12 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Sanctum Middleware
+    | Middleware do Sanctum
     |--------------------------------------------------------------------------
     |
-    | When authenticating your first-party SPA with Sanctum you may need to
-    | customize some of the middleware Sanctum uses while processing the
-    | request. You may change the middleware listed below as required.
+    | Ao autenticar sua SPA de primeira parte com o Sanctum, você pode precisar
+    | personalizar alguns dos middlewares que o Sanctum usa ao processar a
+    | solicitação. Você pode alterar os middlewares listados abaixo conforme necessário.
     |
     */
 

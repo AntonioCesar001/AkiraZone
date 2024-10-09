@@ -11,6 +11,9 @@
 |
 */
 
+// Cria uma nova instância da aplicação Laravel. Esta instância é o "cola" que une
+// todos os componentes do Laravel e serve como o contêiner de Injeção de Dependência (IoC),
+// conectando todas as diversas partes do sistema.
 $app = new Illuminate\Foundation\Application(
     $_ENV['APP_BASE_PATH'] ?? dirname(__DIR__)
 );
@@ -26,6 +29,8 @@ $app = new Illuminate\Foundation\Application(
 |
 */
 
+// Vincula as interfaces importantes ao contêiner para que possam ser resolvidas conforme necessário.
+// Os "kernels" lidam com as requisições recebidas pela aplicação, tanto da interface web quanto da linha de comando (CLI).
 $app->singleton(
     Illuminate\Contracts\Http\Kernel::class,
     App\Http\Kernel::class
@@ -52,4 +57,7 @@ $app->singleton(
 |
 */
 
+// Retorna a instância da aplicação. Esta instância é fornecida ao script chamador
+// para que possamos separar a construção das instâncias da execução real da aplicação
+// e do envio de respostas.
 return $app;

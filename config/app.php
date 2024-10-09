@@ -5,143 +5,148 @@ use Illuminate\Support\ServiceProvider;
 
 return [
 
+    /*
+    |--------------------------------------------------------------------------
+    | Horário do Agendamento
+    |--------------------------------------------------------------------------
+    |
+    | Configura as horas e minutos para o agendamento de tarefas.
+    | As configurações podem ser definidas no arquivo .env.
+    |
+    */
     'hour' => env('SCHEDULE_HOUR', ''),
     'min' => env('SCHEDULE_MIN', ''),
     'is_demo' => env('IS_DEMO', false),
-    /*
-    |--------------------------------------------------------------------------
-    | Application Name
-    |--------------------------------------------------------------------------
-    |
-    | This value is the name of your application. This value is used when the
-    | framework needs to place the application's name in a notification or
-    | any other location as required by the application or its packages.
-    |
-    */
-
-    'name' => env('APP_NAME', 'Laravel'),
 
     /*
     |--------------------------------------------------------------------------
-    | Application Environment
+    | Nome da Aplicação
     |--------------------------------------------------------------------------
     |
-    | This value determines the "environment" your application is currently
-    | running in. This may determine how you prefer to configure various
-    | services the application utilizes. Set this in your ".env" file.
+    | Este valor é o nome da sua aplicação. Ele é usado quando o
+    | framework precisa inserir o nome da aplicação em uma notificação
+    | ou em qualquer outro local conforme necessário pela aplicação.
     |
     */
+    'name' => env('APP_NAME', 'AkiraZone'),
 
+    /*
+    |--------------------------------------------------------------------------
+    | Ambiente da Aplicação
+    |--------------------------------------------------------------------------
+    |
+    | Este valor determina o "ambiente" em que sua aplicação está
+    | atualmente em execução. Isso pode influenciar como você prefere
+    | configurar vários serviços que a aplicação utiliza. Defina isso no seu
+    | arquivo ".env".
+    |
+    */
     'env' => env('APP_ENV', 'production'),
 
     /*
     |--------------------------------------------------------------------------
-    | Application Debug Mode
+    | Modo de Depuração da Aplicação
     |--------------------------------------------------------------------------
     |
-    | When your application is in debug mode, detailed error messages with
-    | stack traces will be shown on every error that occurs within your
-    | application. If disabled, a simple generic error page is shown.
+    | Quando sua aplicação está no modo de depuração, mensagens de erro
+    | detalhadas com rastreamentos de pilha serão mostradas em cada erro
+    | que ocorrer na aplicação. Se desabilitado, uma página de erro genérica
+    | simples será exibida.
     |
     */
-
     'debug' => (bool) env('APP_DEBUG', false),
 
     /*
     |--------------------------------------------------------------------------
-    | Application URL
+    | URL da Aplicação
     |--------------------------------------------------------------------------
     |
-    | This URL is used by the console to properly generate URLs when using
-    | the Artisan command line tool. You should set this to the root of
-    | your application so that it is used when running Artisan tasks.
+    | Esta URL é usada pelo console para gerar URLs adequadamente ao usar
+    | a ferramenta de linha de comando Artisan. Você deve definir isso
+    | para a raiz da sua aplicação para que seja usada ao executar tarefas
+    | Artisan.
     |
     */
-
     'url' => env('APP_URL', 'http://localhost'),
 
     'asset_url' => env('ASSET_URL'),
 
     /*
     |--------------------------------------------------------------------------
-    | Application Timezone
+    | Fuso Horário da Aplicação
     |--------------------------------------------------------------------------
     |
-    | Here you may specify the default timezone for your application, which
-    | will be used by the PHP date and date-time functions. We have gone
-    | ahead and set this to a sensible default for you out of the box.
+    | Aqui você pode especificar o fuso horário padrão para sua aplicação,
+    | que será usado pelas funções de data e hora do PHP. Configuramos isso
+    | para um padrão sensato para você.
     |
     */
-
-    'timezone' => 'UTC',
+    'timezone' => 'America/Sao_Paulo',
 
     /*
     |--------------------------------------------------------------------------
-    | Application Locale Configuration
+    | Configuração de Localidade da Aplicação
     |--------------------------------------------------------------------------
     |
-    | The application locale determines the default locale that will be used
-    | by the translation service provider. You are free to set this value
-    | to any of the locales which will be supported by the application.
+    | A localidade da aplicação determina a localidade padrão que será
+    | usada pelo provedor de serviços de tradução. Você é livre para
+    | definir este valor para qualquer uma das localidades que serão
+    | suportadas pela aplicação.
     |
     */
-
-    'locale' => 'en',
+    'locale' => 'pt-br',
 
     /*
     |--------------------------------------------------------------------------
-    | Application Fallback Locale
+    | Localidade de Fallback da Aplicação
     |--------------------------------------------------------------------------
     |
-    | The fallback locale determines the locale to use when the current one
-    | is not available. You may change the value to correspond to any of
-    | the language folders that are provided through your application.
+    | A localidade de fallback determina a localidade a ser usada quando a
+    | atual não estiver disponível. Você pode alterar o valor para corresponder
+    | a qualquer uma das pastas de idioma fornecidas pela sua aplicação.
     |
     */
-
-    'fallback_locale' => 'en',
+    'fallback_locale' => 'pt-br',
 
     /*
     |--------------------------------------------------------------------------
-    | Faker Locale
+    | Localidade do Faker
     |--------------------------------------------------------------------------
     |
-    | This locale will be used by the Faker PHP library when generating fake
-    | data for your database seeds. For example, this will be used to get
-    | localized telephone numbers, street address information and more.
+    | Esta localidade será usada pela biblioteca Faker do PHP ao gerar dados
+    | falsos para suas sementes de banco de dados. Por exemplo, isso será usado
+    | para obter números de telefone localizados, informações de endereço e mais.
     |
     */
-
     'faker_locale' => 'en_US',
 
     /*
     |--------------------------------------------------------------------------
-    | Encryption Key
+    | Chave de Criptografia
     |--------------------------------------------------------------------------
     |
-    | This key is used by the Illuminate encrypter service and should be set
-    | to a random, 32 character string, otherwise these encrypted strings
-    | will not be safe. Please do this before deploying an application!
+    | Esta chave é usada pelo serviço de criptografia do Illuminate e deve
+    | ser definida como uma string aleatória de 32 caracteres; caso contrário,
+    | essas strings criptografadas não serão seguras. Por favor, faça isso antes
+    | de implantar uma aplicação!
     |
     */
-
     'key' => env('APP_KEY'),
 
     'cipher' => 'AES-256-CBC',
 
     /*
     |--------------------------------------------------------------------------
-    | Maintenance Mode Driver
+    | Driver do Modo de Manutenção
     |--------------------------------------------------------------------------
     |
-    | These configuration options determine the driver used to determine and
-    | manage Laravel's "maintenance mode" status. The "cache" driver will
-    | allow maintenance mode to be controlled across multiple machines.
+    | Estas opções de configuração determinam o driver usado para determinar
+    | e gerenciar o status do "modo de manutenção" do Laravel. O driver "cache"
+    | permitirá que o modo de manutenção seja controlado entre várias máquinas.
     |
-    | Supported drivers: "file", "cache"
+    | Drivers suportados: "file", "cache"
     |
     */
-
     'maintenance' => [
         'driver' => 'file',
         // 'store'  => 'redis',
@@ -149,22 +154,21 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Autoloaded Service Providers
+    | Provedores de Serviço Autoloaded
     |--------------------------------------------------------------------------
     |
-    | The service providers listed here will be automatically loaded on the
-    | request to your application. Feel free to add your own services to
-    | this array to grant expanded functionality to your applications.
+    | Os provedores de serviço listados aqui serão carregados automaticamente
+    | na solicitação da sua aplicação. Fique à vontade para adicionar seus próprios
+    | serviços a este array para conceder funcionalidade expandida às suas aplicações.
     |
     */
-
     'providers' => ServiceProvider::defaultProviders()->merge([
         /*
-         * Package Service Providers...
+         * Provedores de Serviço de Pacotes...
          */
 
         /*
-         * Application Service Providers...
+         * Provedores de Serviço da Aplicação...
          */
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
@@ -175,15 +179,14 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Class Aliases
+    | Aliases de Classe
     |--------------------------------------------------------------------------
     |
-    | This array of class aliases will be registered when this application
-    | is started. However, feel free to register as many as you wish as
-    | the aliases are "lazy" loaded so they don't hinder performance.
+    | Este array de aliases de classe será registrado quando esta aplicação
+    | for iniciada. No entanto, sinta-se à vontade para registrar quantos quiser,
+    | pois os aliases são carregados "lazy", então não prejudicam o desempenho.
     |
     */
-
     'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
     ])->toArray(),

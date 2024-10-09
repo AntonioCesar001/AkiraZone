@@ -4,14 +4,22 @@ namespace App\Http\Middleware;
 
 use Illuminate\Cookie\Middleware\EncryptCookies as Middleware;
 
+/**
+ * Middleware EncryptCookies para criptografar cookies.
+ * 
+ * Este middleware intercepta cookies e garante que sejam criptografados
+ * antes de serem armazenados ou enviados ao cliente, aumentando a segurança
+ * das informações contidas nos cookies.
+ */
 class EncryptCookies extends Middleware
 {
     /**
-     * The names of the cookies that should not be encrypted.
+     * Os nomes dos cookies que não devem ser criptografados.
      *
      * @var array<int, string>
      */
     protected $except = [
+        // Lista de cookies que não serão criptografados.
         //
     ];
 }
